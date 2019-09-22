@@ -1,0 +1,3 @@
+project=wordy_api
+test=rspec
+template=erb
