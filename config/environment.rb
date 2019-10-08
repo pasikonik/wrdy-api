@@ -1,11 +1,17 @@
+# frozen_string_literal: true
+
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/wordy_api'
 require_relative '../apps/web/application'
 
+require 'hanami/middleware/body_parser'
+
 Hanami.configure do
   mount Web::Application, at: '/'
+
+  middleware.use Hanami::Middleware::BodyParser, :json
 
   model do
     ##

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'hanami/helpers'
 require 'hanami/assets'
 
@@ -18,9 +20,9 @@ module Web
       #
       # When you add new directories, remember to add them here.
       #
-      load_paths << [
-        'controllers',
-        'views'
+      load_paths << %w[
+        controllers
+        views
       ]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
@@ -87,15 +89,24 @@ module Web
       #
       # middleware.use Rack::Protection
 
+      middleware.use Rack::Cors do
+        allow do
+          origins ENV['CORS_ALLOW_ORIGIN']
+          resource '*', headers: :any, methods: %i[get post patch options]
+        end
+      end
+
+      controller.format json: 'application/json'
+
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, defaults to :html
       #
-      # default_request_format :html
+      default_request_format :json
 
       # Default format for responses that don't consider the request format
       # Argument: A symbol representation of a mime type, defaults to :html
       #
-      # default_response_format :html
+      default_response_format :json
 
       ##
       # TEMPLATES
@@ -220,7 +231,7 @@ module Web
       #
       #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/CSP_policy_directives
       #
-      security.content_security_policy %{
+      security.content_security_policy %(
         form-action 'self';
         frame-ancestors 'self';
         base-uri 'self';
@@ -235,12 +246,16 @@ module Web
         child-src 'self';
         frame-src 'self';
         media-src 'self'
-      }
+      )
 
       ##
       # FRAMEWORKS
       #
 
+      # controller.default_headers(
+      #   'Access-Control-Allow-Origin' => 'http://localhost:8080',
+      #   'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS'
+      # )
       # Configure the code that will yield each time Web::Action is included
       # This is useful for sharing common functionality
       #
