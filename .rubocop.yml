@@ -1,0 +1,30 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  TargetRubyVersion: 2.6
+Bundler/OrderedGems:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "tmp/**/*"
+    - "apps/web/application.rb"
+Metrics/LineLength:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
+Style/AndOr:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: true
+Style/RaiseArgs:
+  Enabled: false
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
