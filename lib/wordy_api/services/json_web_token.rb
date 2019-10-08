@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class JsonWebToken
-  DEFAULT_EXPIRE_TIME = 86400 # 24 hours
+  DEFAULT_EXPIRE_TIME = 86_400 # 24 hours
 
   class << self
     def encode(payload, exp = Time.new + DEFAULT_EXPIRE_TIME)
