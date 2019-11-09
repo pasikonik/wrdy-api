@@ -6,6 +6,8 @@ gem 'rake'
 gem 'hanami',       '~> 1.3'
 gem 'hanami-model', '~> 1.3'
 
+gem 'puma'
+
 gem 'bcrypt'
 gem 'jwt'
 
@@ -27,8 +29,4 @@ end
 group :test do
   gem 'rspec'
   gem 'capybara'
-end
-
-group :production do
-  # gem 'puma'
 end

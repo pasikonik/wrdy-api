@@ -7,6 +7,7 @@ module Web
     module Users
       class Register
         include Web::Action
+        include Authentication::Skip
 
         params do
           required(:email).filled(:str?)
@@ -18,9 +19,14 @@ module Web
           if result.success?
             email = params[:email]
             hashed_pass = BCrypt::Password.create(params[:password])
-            repo.create(email.merge(:hashed_pass))
+            user_params = {
+              email: email,
+              hashed_pass: hashed_pass
+            }
+            repo.create(user_params)
+            status 201, 'User has been created'
           else
-            byebug
+            halt 404, result.errors
           end
         end
 

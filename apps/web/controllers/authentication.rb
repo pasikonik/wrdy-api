@@ -17,7 +17,7 @@ module Authentication
   end
 
   def authenticated?
-    !!current_user
+    !current_user.nil?
   end
 
   def current_user
