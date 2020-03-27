@@ -1,3 +1,3 @@
-project=wordy_api
+project=wrdy-api
 test=rspec
 template=erb

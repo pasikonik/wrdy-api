@@ -1,4 +1,4 @@
-# Wordy Api
+# Wrdy Api
 
 Welcome to your new Hanami project!
 

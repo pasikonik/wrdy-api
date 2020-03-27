@@ -3,7 +3,7 @@
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
-require_relative '../lib/wordy_api'
+require_relative '../lib/wrdy_api'
 require_relative '../apps/web/application'
 
 require 'hanami/middleware/body_parser'
@@ -20,9 +20,9 @@ Hanami.configure do
     # Available options:
     #
     #  * SQL adapter
-    #    adapter :sql, 'sqlite://db/wordy_api_development.sqlite3'
-    #    adapter :sql, 'postgresql://localhost/wordy_api_development'
-    #    adapter :sql, 'mysql://localhost/wordy_api_development'
+    #    adapter :sql, 'sqlite://db/wrdy_api_development.sqlite3'
+    #    adapter :sql, 'postgresql://localhost/wrdy_api_development'
+    #    adapter :sql, 'mysql://localhost/wrdy_api_development'
     #
     adapter :sql, ENV.fetch('DATABASE_URL')
 
@@ -34,7 +34,7 @@ Hanami.configure do
   end
 
   mailer do
-    root 'lib/wordy_api/mailers'
+    root 'lib/wrdy_api/mailers'
 
     # See https://guides.hanamirb.org/mailers/delivery
     delivery :test
