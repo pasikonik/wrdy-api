@@ -5,21 +5,20 @@ module Web
     module Users
       class Show
         include Web::Action
-        include Authentication::Skip
-
+        include JSONAPI::Hanami::Action
 
         def call(params)
           user = repo.find(params[:id])
+
+          self.data = user
+          self.fields = { users: %i[email] }
+          self.status = 200
         end
 
         private
 
         def repo
           @repo ||= UserRepository.new
-        end
-
-        def validator(attributes)
-          UserValidator.new attributes
         end
       end
     end
