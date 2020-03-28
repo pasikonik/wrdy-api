@@ -6,6 +6,10 @@
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 
-post '/register', to: 'users#register'
+post '/users', to: 'users#create'
+get '/users/:id', to: 'users#show'
 post '/login', to: 'sessions#login'
-get '/me', to: 'sessions#me'
+
+# resources :users, only: %i[show create]
+
+resources :lists

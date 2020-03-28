@@ -8,6 +8,7 @@ gem 'hanami-model', '~> 1.3'
 
 gem 'puma'
 
+gem 'jsonapi-hanami'
 gem 'bcrypt'
 gem 'jwt'
 

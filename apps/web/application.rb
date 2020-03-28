@@ -98,7 +98,9 @@ module Web
         end
       end
 
-      controller.format json: 'application/json'
+      middleware.use Hanami::Middleware::BodyParser, :json
+
+      controller.format jsonapi: 'application/vnd.api+json'
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, defaults to :html
