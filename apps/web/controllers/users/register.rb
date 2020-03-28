@@ -5,7 +5,7 @@ require 'bcrypt'
 module Web
   module Controllers
     module Users
-      class Register
+      class Create
         include Web::Action
         include Authentication::Skip
 
