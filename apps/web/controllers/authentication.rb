@@ -27,7 +27,7 @@ module Authentication
 
   def validate_token
     token_header = request.get_header('HTTP_AUTHORIZATION')
-    token = token_header.gsub(/^Baread /, '')
+    token = token_header.gsub(/^Bearer /, '')
 
     JsonWebToken.decode(token)
   rescue StandardError
