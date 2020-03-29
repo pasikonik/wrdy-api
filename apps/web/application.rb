@@ -91,14 +91,14 @@ module Web
       #
       # middleware.use Rack::Protection
 
-      middleware.use Hanami::Middleware::BodyParser, :json
-
       middleware.use Rack::Cors do
         allow do
           origins ENV['CORS_ALLOW_ORIGIN']
           resource '*', headers: :any, methods: %i[get post patch options]
         end
       end
+
+      middleware.use Hanami::Middleware::BodyParser, :json
 
       controller.format jsonapi: 'application/vnd.api+json'
 
