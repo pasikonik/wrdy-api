@@ -8,7 +8,7 @@ gem 'hanami-model', '~> 1.3'
 
 gem 'puma'
 
-gem 'jsonapi-hanami'
+gem 'jsonapi-hanami', github: 'jsonapi-rb/jsonapi-hanami'
 gem 'bcrypt'
 gem 'jwt'
 

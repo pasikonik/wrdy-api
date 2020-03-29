@@ -1,6 +1,7 @@
 require 'hanami/interactor'
+require 'bcrypt'
 
-class CreateUser
+class AddUser
   include Hanami::Interactor
 
   expose :repo
@@ -14,9 +15,13 @@ class CreateUser
     if result.success?
       email = params[:email]
       hashed_pass = BCrypt::Password.create(params[:password])
-      repo.create({ email: email }.merge(:hashed_pass))
+      user_params = {
+        email: email,
+        hashed_pass: hashed_pass
+      }
+      repo.create(user_params)
     else
-      false
+      error result.errors
     end
   end
 

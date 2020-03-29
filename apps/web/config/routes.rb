@@ -8,6 +8,7 @@
 
 post '/users', to: 'users#create'
 get '/users/:id', to: 'users#show'
+
 post '/login', to: 'sessions#login'
 
 # resources :users, only: %i[show create]

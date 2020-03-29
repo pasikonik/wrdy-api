@@ -11,7 +11,7 @@ Hanami::Model.migration do
       column :updated_at, DateTime, null: false
       column :finished_at, DateTime
 
-      check { fluency <= 10 }
+      check { fluency <= 100 }
     end
   end
 end

@@ -28,3 +28,9 @@ Layout/ClosingParenthesisIndentation:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/Style/HashEachMethods:
+  Enabled: true
