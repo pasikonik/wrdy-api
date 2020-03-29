@@ -36,12 +36,10 @@ Hanami.configure do
   mailer do
     root 'lib/wrdy_api/mailers'
 
-    # See https://guides.hanamirb.org/mailers/delivery
     delivery :test
   end
 
   environment :development do
-    # See: https://guides.hanamirb.org/projects/logging
     logger level: :debug
   end
 

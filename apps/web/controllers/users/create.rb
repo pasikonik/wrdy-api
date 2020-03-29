@@ -6,8 +6,9 @@ module Web
       class Create
         include Web::Action
         include Authentication::Skip
+        include JSONAPI::Hanami::Action
 
-        deserializable_resoruce :user
+        deserializable_resource :user
 
         def call(params)
           result = AddUser.call(params)
