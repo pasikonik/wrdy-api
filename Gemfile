@@ -6,7 +6,7 @@ gem 'rake'
 gem 'hanami',       '~> 1.3'
 gem 'hanami-model', '~> 1.3'
 
-gem 'puma'
+gem 'puma', '< 6'
 
 gem 'jsonapi-hanami', github: 'jsonapi-rb/jsonapi-hanami'
 gem 'bcrypt'
