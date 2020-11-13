@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+ruby '2.7.2'
+
 gem 'rake'
 gem 'hanami',       '~> 1.3'
 gem 'hanami-model', '~> 1.3'
