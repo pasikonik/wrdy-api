@@ -11,7 +11,7 @@ module Web
         deserializable_resource :user
 
         def call(params)
-          result = AddUser.call(params)
+          result = AddUser.new.call(params)
 
           if result.successful?
             status 201, 'User has been created'

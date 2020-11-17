@@ -9,5 +9,6 @@ class Word < Hanami::Entity
     attribute :created_at,  Types::Time
     attribute :updated_at,  Types::Time
     attribute :finished_at, Types::Time
+    attribute :list_id,     Types::Int
   end
 end

@@ -7,5 +7,6 @@ class User < Hanami::Entity
     attribute :hashed_pass,            Types::String
     attribute :password_reset_sent_at, Types::Time
     attribute :role,                   Types::String
+    attribute :lists,                  Types::Collection(::List)
   end
 end

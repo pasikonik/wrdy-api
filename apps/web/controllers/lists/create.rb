@@ -10,7 +10,7 @@ module Web
         deserializable_resource :list
 
         def call(params)
-          result = ::AddList.call(params, current_user)
+          result = AddList.new.call(params, current_user.id)
 
           if result.successful?
             status 201, 'List has been created'

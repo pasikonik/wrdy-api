@@ -5,21 +5,19 @@ require 'hanami/interactor'
 class AddList
   include Hanami::Interactor
 
-  expose :repo
-
   def initialize(repository: ListRepository.new)
     @repo = repository
   end
 
-  def call(params, current_user)
+  def call(params, current_user_id)
     result = validator(params).validate
-    byebug
-    if result.sucess?
+
+    if result.success?
       list_params = {
-        name: params.name,
-        user_id: current_user.id
+        name: params[:name],
+        user_id: current_user_id
       }
-      repo.create(list_params)
+      @repo.create(list_params)
     else
       error result.error
     end

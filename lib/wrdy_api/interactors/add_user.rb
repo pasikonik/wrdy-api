@@ -6,8 +6,6 @@ require 'bcrypt'
 class AddUser
   include Hanami::Interactor
 
-  expose :repo
-
   def initialize(repository: UserRepository.new)
     @repo = repository
   end
@@ -21,7 +19,7 @@ class AddUser
         email: email,
         hashed_pass: hashed_pass
       }
-      repo.create(user_params)
+      @repo.create(user_params)
     else
       error result.errors
     end

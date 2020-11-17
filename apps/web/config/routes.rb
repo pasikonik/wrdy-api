@@ -8,11 +8,10 @@
 
 post '/login', to: 'sessions#login'
 
-post '/users', to: 'users#create'
-post '/lists', to: 'lists#create'
-get '/lists/:id', to: 'lists#show'
-get '/users/:id', to: 'users#show'
+# post '/users', to: 'users#create'
+# get '/users/:id', to: 'users#show'
 
-# resources :users, only: %i[show create]
+resources :lists, only: %i[create show index]
+resources :users, only: %i[create show]
 
-# resources :lists
+
