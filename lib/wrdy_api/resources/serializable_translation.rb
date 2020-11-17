@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SerializableTranslation < JSONAPI::Serializable::Resource
   type 'translations'
 

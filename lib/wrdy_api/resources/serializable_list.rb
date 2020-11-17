@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SerializableList < JSONAPI::Serializable::Resource
   type 'lists'
 

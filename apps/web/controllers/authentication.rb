@@ -22,7 +22,7 @@ module Authentication
 
   def current_user
     user_id = validate_token ? validate_token['user_id'] : nil
-    user = UserRepository.new.find(user_id)
+    UserRepository.new.find(user_id)
   end
 
   def validate_token

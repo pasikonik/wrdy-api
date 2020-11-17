@@ -2,16 +2,16 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
 Bundler/OrderedGems:
   Enabled: false
 Metrics/BlockLength:
   Exclude:
-    - "spec/**/*"
-    - "tmp/**/*"
-    - "apps/web/application.rb"
-Metrics/LineLength:
-  Enabled: false
+    - 'spec/**/*'
+    - 'tmp/**/*'
+    - 'apps/web/application.rb'
+Metrics/MethodLength:
+  Max: 15
 Naming/FileName:
   Enabled: false
 Style/AndOr:
@@ -22,15 +22,43 @@ Style/ExpandPathArguments:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: true
+  Exclude:
+    - 'db/**/*'
 Style/RaiseArgs:
+  Enabled: false
+Layout/LineLength:
   Enabled: false
 Layout/ClosingParenthesisIndentation:
   Enabled: false
+Lint/DuplicateBranch:
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement:
+  Enabled: true
+Lint/EmptyBlock:
+  Enabled: true
+Lint/EmptyClass:
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks:
+  Enabled: true
+Lint/ToEnumArguments:
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator:
+  Enabled: true
+Style/ArgumentsForwarding:
+  Enabled: true
+Style/CollectionCompact:
+  Enabled: true
+Style/DocumentDynamicEvalDefinition:
+  Enabled: true
 Style/Documentation:
   Enabled: false
 Style/HashEachMethods:
   Enabled: true
 Style/HashTransformKeys:
   Enabled: true
-Style/Style/HashEachMethods:
+Style/NegatedIfElseCondition:
+  Enabled: true
+Style/NilLambda:
+  Enabled: true
+Style/SwapValues:
   Enabled: true
