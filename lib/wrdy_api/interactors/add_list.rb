@@ -11,13 +11,13 @@ class AddList
     @repo = repository
   end
 
-  def call(params)
+  def call(params, current_user)
     result = validator(params).validate
     byebug
     if result.sucess?
       list_params = {
         name: params.name,
-        user_id: 1
+        user_id: current_user.id
       }
       repo.create(list_params)
     else

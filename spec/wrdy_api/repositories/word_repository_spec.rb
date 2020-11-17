@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-RSpec.describe TranslationRepository, type: :repository do
+RSpec.describe WordRepository, type: :repository do
   # place your tests here
 end
