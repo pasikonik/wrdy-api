@@ -9,9 +9,6 @@ module Web
         def call
           'yes'
         end
-
-        private
-
       end
     end
   end
