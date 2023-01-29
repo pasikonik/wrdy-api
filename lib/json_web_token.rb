@@ -3,11 +3,11 @@ class JsonWebToken
 
   class << self
     def encode(payload)
-      JWT.encode(payload, SECRET_KEY)
+      JWT.encode(payload, SECRET_KEY, 'HS512')
     end
 
     def decode(payload)
-      JWT.decode(payload, SECRET_KEY).first
+      JWT.decode(payload, SECRET_KEY, true, { algorithm: 'HS512' }).first
     rescue StandardError
       nil
     end
