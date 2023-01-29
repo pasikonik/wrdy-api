@@ -4,13 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
-gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
+gem 'pg', '~> 1.4'
+gem 'puma', '~> 6.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'jwt'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.18'
 gem 'rack-cors'
 
 group :development, :test do
