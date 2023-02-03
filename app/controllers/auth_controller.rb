@@ -11,7 +11,7 @@ class AuthController < ApplicationController
       render json: { errors: "No user log in" }
     end
   end
-
+  
   private
 
   def auth_params
