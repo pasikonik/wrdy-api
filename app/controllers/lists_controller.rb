@@ -15,7 +15,7 @@ class ListsController < ApplicationController
 
   # POST /lists
   def create
-    @list = List.new(list_params)
+    @list = List.new(list_params.merge(user_id: current_user.id))
 
     if @list.save
       render json: @list, status: :created, location: @list
@@ -47,6 +47,6 @@ class ListsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def list_params
-    params.require(:list).permit(:name, :user_id)
+    params.permit(:name)
   end
 end
