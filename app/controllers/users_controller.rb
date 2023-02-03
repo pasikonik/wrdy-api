@@ -12,6 +12,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def me
+    if user = current_user
+      render json: user
+    else
+      render json: { errors: 'Wrong token' }
+    end
+  end
+  
   private
 
   def user_params
