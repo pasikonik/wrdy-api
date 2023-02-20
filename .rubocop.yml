@@ -3,6 +3,7 @@ require:
   - rubocop-performance
 
 AllCops:
+  NewCops: enable
   Include:
     - 'app/**/*.rb'
 
