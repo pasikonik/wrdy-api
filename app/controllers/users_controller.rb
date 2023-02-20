@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   skip_before_action :authenticate!, only: [:create]
 
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def me
-    if user = current_user
+    if (user = current_user)
       render json: user
     else
       render json: { errors: 'Wrong token' }

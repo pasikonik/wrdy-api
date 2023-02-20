@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class AuthController < ApplicationController
   skip_before_action :authenticate!
 
   def login
     user = User.find_by(email: auth_params[:email])
 
-    if user && user.authenticate(auth_params[:password])
+    if user&.authenticate(auth_params[:password])
       token = ::JsonWebToken.encode({ user_id: user.id })
       render json: { user:, token: }
     else

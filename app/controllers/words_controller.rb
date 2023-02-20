@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WordsController < ApplicationController
   before_action :set_word, only: [:destroy]
 
