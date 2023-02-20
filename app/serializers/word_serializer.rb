@@ -1,5 +1,5 @@
 class WordSerializer < ActiveModel::Serializer
-    attributes :id, :origin, :translation, :proficiency
+  attributes :id, :origin, :translation, :proficiency
 
-    belongs_to :list
+  belongs_to :list
 end

@@ -6,12 +6,12 @@ class AuthController < ApplicationController
 
     if user && user.authenticate(auth_params[:password])
       token = ::JsonWebToken.encode({ user_id: user.id })
-      render json: { user: user, token: token }
+      render json: { user:, token: }
     else
-      render json: { errors: "No user log in" }
+      render json: { errors: 'No user log in' }
     end
   end
-  
+
   private
 
   def auth_params

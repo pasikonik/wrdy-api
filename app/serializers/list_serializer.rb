@@ -1,6 +1,6 @@
 class ListSerializer < ActiveModel::Serializer
-    attributes :id, :name
+  attributes :id, :name
 
-    has_many :words
-    belongs_to :user
+  has_many :words
+  belongs_to :user
 end
