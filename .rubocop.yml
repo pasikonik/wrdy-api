@@ -1,0 +1,10 @@
+require: 
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  Include:
+    - 'app/**/*.rb'
+
+Style/Documentation:
+  Enabled: false
