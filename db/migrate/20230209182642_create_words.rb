@@ -3,8 +3,8 @@ class CreateWords < ActiveRecord::Migration[6.1]
     create_table :words do |t|
       t.string :origin
       t.string :translation
-      t.integer :proficiency
-      t.string :language
+      t.integer :proficiency, default: 0
+      t.string :language, default: 'en'
       t.references :list, null: false, foreign_key: true
 
       t.timestamps

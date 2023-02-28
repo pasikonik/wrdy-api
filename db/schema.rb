@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2023_02_09_182642) do
   create_table "words", force: :cascade do |t|
     t.string "origin"
     t.string "translation"
-    t.integer "proficiency"
-    t.string "language"
+    t.integer "proficiency", default: 0
+    t.string "language", default: "en"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
