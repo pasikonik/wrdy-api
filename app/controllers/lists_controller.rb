@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    render json: @list
+    render json: @list, include: [:words]
   end
 
   def create
