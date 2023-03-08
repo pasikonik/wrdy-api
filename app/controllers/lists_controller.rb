@@ -32,7 +32,9 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list.destroy
+    @list.destroy!
+
+    head :no_content
   end
 
   private

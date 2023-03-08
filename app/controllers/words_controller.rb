@@ -12,7 +12,9 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    Word.find(params[:id]).destroy
+    Word.find(params[:id]).destroy!
+
+    head :no_content
   end
 
   private

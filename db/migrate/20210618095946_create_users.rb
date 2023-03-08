@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :email
       t.string :username
       t.string :password_digest
+      t.string :default_language, default: 'en'
 
       t.timestamps
     end
