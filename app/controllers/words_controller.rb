@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class WordsController < ApplicationController
+  def index
+    list = List.find(params[:list_id])
+
+    render json: list.words
+  end
+
   def create
     word = Word.new(word_params)
 
