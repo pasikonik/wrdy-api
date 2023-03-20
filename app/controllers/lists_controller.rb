@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
+ONLY_ATTRIBUTES = %i[id name].freeze
+
 class ListsController < ApplicationController
   before_action :set_list, only: %i[show update destroy]
 
   def index
     @lists = current_user.lists
 
-    render json: @lists
+    render json: @lists, only: ONLY_ATTRIBUTES
   end
 
   def show
@@ -17,7 +19,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params.merge(user_id: current_user.id))
 
     if @list.save
-      render json: @list, status: :created, location: @list
+      render json: @list, only: ONLY_ATTRIBUTES, status: :created, location: @list
     else
       render json: @list.errors, status: :unprocessable_entity
     end
