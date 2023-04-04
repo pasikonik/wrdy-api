@@ -5,7 +5,7 @@ require 'csv'
 class ImportController < ApplicationController
   def create
     ::CSV.foreach(file, row_sep: :auto, skip_blanks: true) do |origin, translation|
-      list.words.build(origin:, translation:)
+      list.words.build(origin: origin.downcase, translation: translation.downcase)
     end
     if list.save
       render json: list, only: %i[id name]
