@@ -19,6 +19,19 @@ class WordsController < ApplicationController
     end
   end
 
+  def update
+    words = Word.where(id: word_ids)
+
+    Word.transaction do
+      words.each do |word|
+        word.increment(:proficiency, 5)
+        word.save!
+      end
+    end
+
+    render json: words, except: EXCEPT_ATTRIBUTES
+  end
+
   def destroy
     Word.find(params[:id]).destroy!
 
@@ -29,5 +42,9 @@ class WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit(:origin, :translation, :list_id)
+  end
+
+  def word_ids
+    params[:word_ids]
   end
 end
