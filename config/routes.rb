@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :words, only: %i[index]
   end
   resources :words, only: %i[create destroy]
+  put '/words', to: 'words#update'
   resources :users, only: %i[create] do
     get 'me', to: 'users#me', on: :collection
   end
