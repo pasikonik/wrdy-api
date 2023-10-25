@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-ONLY_ATTRIBUTES = %i[id name].freeze
-
 class ListsController < ApplicationController
   before_action :set_list, only: %i[show update destroy]
+
+  ONLY_ATTRIBUTES = %i[id name].freeze
 
   def index
     @lists = current_user.lists

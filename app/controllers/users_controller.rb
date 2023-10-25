@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-ONLY_ATTRIBUTES = %i[email].freeze
-
 class UsersController < ApplicationController
   skip_before_action :authenticate!, only: [:create]
+
+  ONLY_ATTRIBUTES = %i[email].freeze
 
   def create
     user = User.create(user_params)
