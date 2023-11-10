@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[create] do
     get 'me', to: 'users#me', on: :collection
   end
+  get '/stats', to: 'stats#index'
   post '/import', to: 'import#create'
   post '/login', to: 'auth#login'
 end
